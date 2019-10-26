@@ -1,5 +1,4 @@
 module Idoklad
-
   API_URL = 'https://app.idoklad.cz'
 
   class << self
@@ -16,6 +15,8 @@ module Idoklad
   end
 end
 
-require 'idoklad/issued_invoices'
-require 'idoklad/auth'
-require 'idoklad/api_request'
+require_relative 'idoklad/contacts'
+require_relative 'idoklad/countries'
+require_relative 'idoklad/issued_invoices'
+require_relative 'idoklad/auth'
+require_relative 'idoklad/api_request'
