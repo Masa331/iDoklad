@@ -1,7 +1,13 @@
 require 'json'
+
 class Idoklad::IssuedInvoices
   def self.get_list
     response = Idoklad::ApiRequest.get '/developer/api/v2/IssuedInvoices'
+    JSON.parse response.body
+  end
+
+  def self.get_invoice(invoice_id)
+    response = Idoklad::ApiRequest.get "/developer/api/v2/IssuedInvoices/#{invoice_id}"
     JSON.parse response.body
   end
 
