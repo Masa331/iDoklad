@@ -1,9 +1,8 @@
 require 'oauth2'
 
 module  Idoklad::Auth
-
-  AUTHORIZE_URL = '/identity/server/connect/authorize'
-  TOKEN_URL = '/identity/server/connect/token'
+  AUTHORIZE_URL = 'https://identity.idoklad.cz/server/connect/authorize'
+  TOKEN_URL = 'https://identity.idoklad.cz/server/connect/token'
   SCOPE = 'idoklad_api'
 
   def self.get_token

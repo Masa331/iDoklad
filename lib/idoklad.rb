@@ -1,5 +1,5 @@
 module Idoklad
-  API_URL = 'https://app.idoklad.cz'
+  API_URL = 'https://api.idoklad.cz/v3'
 
   class << self
     attr_accessor :configuration
@@ -18,6 +18,7 @@ end
 require_relative 'idoklad/contacts'
 require_relative 'idoklad/countries'
 require_relative 'idoklad/issued_invoices'
+require_relative 'idoklad/issued_invoice'
 require_relative 'idoklad/auth'
 require_relative 'idoklad/api_request'
 require_relative 'idoklad/agendas'
