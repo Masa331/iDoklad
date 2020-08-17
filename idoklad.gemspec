@@ -8,8 +8,9 @@ Gem::Specification.new do |s|
   s.email       = 'prochazka@coderocket.co'
   s.homepage    = 'https://github.com/CodeRocketCo/iDoklad'
   s.license     = 'MIT'
-
-  s.add_runtime_dependency "oauth2"
-  s.add_runtime_dependency "json"
   s.files       = %w[LICENSE.md README.md idoklad.gemspec] + Dir['lib/**/*.rb']
+
+  s.add_runtime_dependency 'oauth2'
+  s.add_runtime_dependency 'json'
+  s.add_runtime_dependency 'countries'
 end
