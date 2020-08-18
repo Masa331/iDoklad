@@ -2,9 +2,15 @@ require 'vat_check'
 require 'ostruct'
 
 class Idoklad::IssuedInvoice < OpenStruct
-  class Item < OpenStruct
-    class Prices < OpenStruct; end
+  class Prices < OpenStruct
+    class VatRateSummary < OpenStruct; end
 
+    def vat_rate_summary
+      self.VatRateSummary.map { VatRateSummary.new _1 }
+    end
+  end
+
+  class Item < OpenStruct
     def prices
       Prices.new self.Prices
     end
@@ -12,10 +18,11 @@ class Idoklad::IssuedInvoice < OpenStruct
 
   class Customer < OpenStruct
     CZECH = 'Česká republika'
-    EU_COUNTRIES = []
+    SLOVAKIA = 'Slovenská republika'
+    EU_COUNTRIES = [SLOVAKIA]
     OTHER_COUNTRIES = [CZECH]
     COUNTRIES = EU_COUNTRIES + OTHER_COUNTRIES
-    COUNTRY_CODES = { CZECH => 'CZ' }
+    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK' }
 
     def type
       if !czech? && country_eu? && valid_vatin?
@@ -61,6 +68,10 @@ class Idoklad::IssuedInvoice < OpenStruct
 
   def customer
     Customer.new self.PartnerAddress
+  end
+
+  def prices
+    Prices.new self.Prices
   end
 
   def my_address
