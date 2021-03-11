@@ -1,7 +1,7 @@
 require 'vat_check'
 require 'ostruct'
 
-class Idoklad::IssuedInvoice < OpenStruct
+class Idoklad::CreditNote < OpenStruct
   class Prices < OpenStruct
     class VatRateSummary < OpenStruct; end
 
