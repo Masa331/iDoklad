@@ -19,10 +19,11 @@ class Idoklad::IssuedInvoice < OpenStruct
   class Customer < OpenStruct
     CZECH = 'Česká republika'
     SLOVAKIA = 'Slovenská republika'
-    EU_COUNTRIES = [SLOVAKIA]
+    HUNGARY = 'Maďarská republika'
+    EU_COUNTRIES = [SLOVAKIA, HUNGARY]
     OTHER_COUNTRIES = [CZECH]
     COUNTRIES = EU_COUNTRIES + OTHER_COUNTRIES
-    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK' }
+    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK', HUNGARY => 'HU' }
 
     def type
       if !czech? && country_eu? && valid_vatin?
@@ -55,6 +56,7 @@ class Idoklad::IssuedInvoice < OpenStruct
           end
         end
 
+      binding.pry
        vat = VatCheck.new(full_dic)
        vat.exists?
     end

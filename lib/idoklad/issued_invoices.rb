@@ -39,8 +39,8 @@ class Idoklad::IssuedInvoices
     response = Idoklad::ApiRequest.post '/IssuedInvoices', invoice
     JSON.parse response.body
   end
-
-  private
+  #
+  # private
 
   def self.page filter = '', page_num = 1
     query = [filter, "page=#{page_num}"].select(&:present?).join '&'
