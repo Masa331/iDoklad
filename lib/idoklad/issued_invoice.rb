@@ -41,7 +41,7 @@ class Idoklad::IssuedInvoice < OpenStruct
     def country_eu?
       name = self.CountryName
 
-      fail "unknown country #{name}" unless COUNTRIES.include? name
+      fail "unknown country #{name} on invoice #{self.DocumentNumber}" unless COUNTRIES.include? name
 
       EU_COUNTRIES.include? name
     end
