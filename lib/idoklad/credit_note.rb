@@ -21,10 +21,12 @@ class Idoklad::CreditNote < OpenStruct
     SLOVAKIA = 'Slovenská republika'
     HUNGARY = 'Maďarská republika'
     ITALY = 'Italská republika'
-    EU_COUNTRIES = [SLOVAKIA, HUNGARY, ITALY]
-    OTHER_COUNTRIES = [CZECH]
+    GREAT_BRITAIN = 'Velká Británie (před Brexitem)'
+    GERMANY = 'Spolková republika Německo'
+    EU_COUNTRIES = [SLOVAKIA, HUNGARY, ITALY, GERMANY]
+    OTHER_COUNTRIES = [CZECH, GREAT_BRITAIN]
     COUNTRIES = EU_COUNTRIES + OTHER_COUNTRIES
-    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK', HUNGARY => 'HU', ITALY => 'IT' }
+    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK', HUNGARY => 'HU', ITALY => 'IT', GREAT_BRITAIN => 'GB', GERMANY => 'DE' }
 
     def type
       if !czech? && country_eu? && valid_vatin?
