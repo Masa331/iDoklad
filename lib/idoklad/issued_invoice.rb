@@ -26,7 +26,7 @@ class Idoklad::IssuedInvoice < OpenStruct
     POLAND = 'Polská republika'
     BELGIUM = 'Belgické království'
     AUSTRIA = 'Rakouská republika'
-    SLOVENIA = 'Slovinská republika  '
+    SLOVENIA = 'Slovinská republika'
     EU_COUNTRIES = [SLOVAKIA, HUNGARY, ITALY, GERMANY, POLAND, BELGIUM, AUSTRIA, SLOVENIA]
     OTHER_COUNTRIES = [CZECH, GREAT_BRITAIN]
     COUNTRIES = EU_COUNTRIES + OTHER_COUNTRIES
