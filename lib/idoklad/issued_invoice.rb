@@ -26,10 +26,11 @@ class Idoklad::IssuedInvoice < OpenStruct
     POLAND = 'Polská republika'
     BELGIUM = 'Belgické království'
     AUSTRIA = 'Rakouská republika'
-    EU_COUNTRIES = [SLOVAKIA, HUNGARY, ITALY, GERMANY, POLAND, BELGIUM, AUSTRIA]
+    SLOVENIA = 'Slovinská republika  '
+    EU_COUNTRIES = [SLOVAKIA, HUNGARY, ITALY, GERMANY, POLAND, BELGIUM, AUSTRIA, SLOVENIA]
     OTHER_COUNTRIES = [CZECH, GREAT_BRITAIN]
     COUNTRIES = EU_COUNTRIES + OTHER_COUNTRIES
-    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK', HUNGARY => 'HU', ITALY => 'IT', GREAT_BRITAIN => 'GB', GERMANY => 'DE', POLAND => 'PL', BELGIUM => 'BE', AUSTRIA => 'AT' }
+    COUNTRY_CODES = { CZECH => 'CZ', SLOVAKIA => 'SK', HUNGARY => 'HU', ITALY => 'IT', GREAT_BRITAIN => 'GB', GERMANY => 'DE', POLAND => 'PL', BELGIUM => 'BE', AUSTRIA => 'AT', SLOVENIA => 'SI' }
 
     def type
       if !czech? && country_eu? && valid_vatin?
